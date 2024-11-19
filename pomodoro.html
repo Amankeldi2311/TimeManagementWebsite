@@ -26,7 +26,6 @@
 
 
   <style>
-    /* General Reset */
     *,
     *::before,
     *::after {
@@ -35,7 +34,6 @@
       box-sizing: border-box;
     }
 
-    /* Body and General Styles */
     body {
       font-family: 'Poppins', sans-serif;
       line-height: 1.6;
@@ -45,7 +43,6 @@
       margin: 0;
     }
 
-    /* Header Area */
     .header-area {
       background-color: transparent;
       box-shadow: none;
@@ -58,15 +55,12 @@
       z-index: 1000;
     }
 
-    /* Scrolled Navbar */
     .header-area.scrolled {
       background-color: #001f3d;
-      /* Navy blue */
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 
     }
 
-    /* Fixed Navbar and Logo on Scroll */
     .header-area.fixed {
       position: fixed;
       top: 0;
@@ -74,7 +68,6 @@
       width: 100%;
       padding: 10px 30px;
       background-color: #001f3d;
-      /* Navy blue */
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     }
 
@@ -87,15 +80,12 @@
 
     .main-nav .logo img {
       width: 100px;
-      /* Default larger logo */
       transition: width 0.3s ease;
     }
 
-    /* Smaller Logo when Navbar is Scrolled */
     .header-area.scrolled .main-nav .logo img,
     .header-area.fixed .main-nav .logo img {
       width: 55px;
-      /* Smaller logo */
     }
 
     .main-nav .nav {
@@ -135,7 +125,6 @@
       color: #fff;
     }
 
-    /* Mobile Nav Menu */
     .nav.active {
       display: block;
       position: absolute;
@@ -146,7 +135,6 @@
       border-top: 1px solid #ddd;
       padding: 15px;
       z-index: 1000;
-      /* Ensure sidebar is above content */
     }
 
     .nav.active li {
@@ -172,31 +160,22 @@
         box-sizing: border-box;
       }
 
-      /* When menu is active (sidebar open), make logo fixed */
       .logo {
         position: fixed;
         top: 20px;
-        /* Keep some space from the top */
         left: 20px;
-        /* Align it with the left */
         z-index: 1001;
-        /* Ensure logo stays above the sidebar */
       }
 
-      /* Ensure sidebar appears over content */
       .nav.active {
         display: flex;
         position: fixed;
-        /* Make the sidebar fixed */
         top: 60px;
-        /* Adjust for the height of the fixed header */
         right: 0;
         width: 250px;
-        /* Sidebar width */
         height: 100%;
         background-color: #333;
         z-index: 999;
-        /* Make sure sidebar is beneath the logo */
       }
 
       .nav.active li {
@@ -204,7 +183,6 @@
       }
     }
 
-    /* Page Heading */
     .page-heading {
       background-color: #3e92cc;
       color: #fff;
@@ -474,7 +452,6 @@
   margin-bottom: 32px;
 }
 
-    /* Other sections as previously defined... */
   </style>
 </head>
 
@@ -487,13 +464,12 @@
       <div class="row">
         <div class="col-12">
           <nav class="main-nav">
-            <!-- ***** Logo Start ***** -->
+
             <a href="index.html" class="logo">
               <img src="assets/images/icons8-time-management-100.png" alt="time management logo">
 
             </a>
-            <!-- ***** Logo End ***** -->
-            <!-- ***** Menu Start ***** -->
+          
             <ul class="nav">
               <li><a href="index.html">Home</a></li>
               <li><a href="kanban.html">Kanban Planner</a></li>
@@ -503,13 +479,12 @@
             <a class='menu-trigger'>
               <span>Menu</span>
             </a>
-            <!-- ***** Menu End ***** -->
+            
           </nav>
         </div>
       </div>
     </div>
   </header>
-  <!-- ***** Header Area End ***** -->
 
   <div class="page-heading">
     <div class="container">
@@ -530,7 +505,9 @@
       <div class="logo-container">  
       </div>
       <h1 class="hero-title">This Method</h1>
-      <p class="hero-description">Quickly design and customize responsive mobile-first sites with Bootstrap, the world's most popular front-end open source toolkit, featuring Sass variables and mixins, responsive grid system, extensive prebuilt components, and powerful JavaScript plugins.</p>
+      <p class="hero-description">Allows charge of your time and boost your focus with our Pomodoro Timer. Whether you're tackling work, studying, or personal projects, this simple yet effective technique helps you break tasks into manageable chunks, maximizing productivity while keeping stress at bay.
+
+        With 25-minute focus intervals and refreshing short breaks, you'll stay energized and achieve more. Ready to transform the way you work? Dive in and make the most of every minute!</p>
     </div>
   </div>
 
@@ -581,23 +558,21 @@
     </div>
   </footer>
 
-  <!-- Scripts -->
-  <!-- Bootstrap core JavaScript -->
   <script src="vendor/jquery/jquery.min.js"></script>
 
-  <script src="assets/js/isotope.min.js"></script>
-  <script src="assets/js/owl-carousel.js"></script>
+  <script src="test/js/isotope.min.js"></script>
+  <script src="test/js/owl-carousel.js"></script>
 
-  <script src="assets/js/tabs.js"></script>
-  <script src="assets/js/swiper.js"></script>
-  <script src="assets/js/custom.js"></script>
+  <script src="test/js/tabs.js"></script>
+  <script src="test/js/swiper.js"></script>
+  <script src="test/js/custom.js"></script>
   <script>
 
     window.onscroll = function () {
       const navbar = document.querySelector('.header-area');
       const logo = document.querySelector('.main-nav .logo img');
 
-      if (window.scrollY > 50) {  // Adjust this value as per your design
+      if (window.scrollY > 50) {  
         navbar.classList.add('scrolled');
 
       } else {

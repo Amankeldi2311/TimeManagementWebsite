@@ -1,36 +1,11 @@
-/**
- * Owl Carousel v2.3.4
- * Copyright 2013-2018 David Deutsch
- * Licensed under: SEE LICENSE IN https://github.com/OwlCarousel2/OwlCarousel2/blob/master/LICENSE
- */
-/**
- * Owl carousel
- * @version 2.3.4
- * @author Bartosz Wojciechowski
- * @author David Deutsch
- * @license The MIT License (MIT)
- * @todo Lazy Load Icon
- * @todo prevent animationend bubling
- * @todo itemsScaleUp
- * @todo Test Zepto
- * @todo stagePadding calculate wrong active classes
- */
+
 ;(function($, window, document, undefined) {
 
-	/**
-	 * Creates a carousel.
-	 * @class The Owl Carousel.
-	 * @public
-	 * @param {HTMLElement|jQuery} element - The element to create the carousel for.
-	 * @param {Object} [options] - The options
-	 */
+
 	function Owl(element, options) {
 
 		/**
-		 * Current settings for the carousel.
-		 * @public
-		 */
-		this.settings = null;
+		  @public
 
 		/**
 		 * Current options set by the caller including defaults.
@@ -263,7 +238,7 @@
 	 */
 	Owl.Plugins = {};
 
-	/**
+	/*
 	 * List of workers involved in the update process.
 	 */
 	Owl.Workers = [ {
@@ -2799,10 +2774,7 @@
 		}
 	};
 
-	/**
-	 * Pauses the autoplay.
-	 * @public
-	 */
+	
 	Autoplay.prototype.pause = function() {
 		if (this._core.is('rotating') && !this._paused) {
 			// Pause the clock.
@@ -2813,9 +2785,7 @@
 		}
 	};
 
-	/**
-	 * Destroys the plugin.
-	 */
+	
 	Autoplay.prototype.destroy = function() {
 		var handler, property;
 
@@ -2833,79 +2803,37 @@
 
 })(window.Zepto || window.jQuery, window, document);
 
-/**
- * Navigation Plugin
- * @version 2.3.4
- * @author Artus Kolanowski
- * @author David Deutsch
- * @license The MIT License (MIT)
- */
+
 ;(function($, window, document, undefined) {
 	'use strict';
 
-	/**
-	 * Creates the navigation plugin.
-	 * @class The Navigation Plugin
-	 * @param {Owl} carousel - The Owl Carousel.
-	 */
+	
 	var Navigation = function(carousel) {
-		/**
-		 * Reference to the core.
-		 * @protected
-		 * @type {Owl}
-		 */
+		
 		this._core = carousel;
 
-		/**
-		 * Indicates whether the plugin is initialized or not.
-		 * @protected
-		 * @type {Boolean}
-		 */
 		this._initialized = false;
 
-		/**
-		 * The current paging indexes.
-		 * @protected
-		 * @type {Array}
-		 */
+		
 		this._pages = [];
 
-		/**
-		 * All DOM elements of the user interface.
-		 * @protected
-		 * @type {Object}
-		 */
+		
 		this._controls = {};
 
-		/**
-		 * Markup for an indicator.
-		 * @protected
-		 * @type {Array.<String>}
-		 */
+		
 		this._templates = [];
 
-		/**
-		 * The carousel element.
-		 * @type {jQuery}
-		 */
+		
 		this.$element = this._core.$element;
 
-		/**
-		 * Overridden methods of the carousel.
-		 * @protected
-		 * @type {Object}
-		 */
+	
 		this._overrides = {
 			next: this._core.next,
 			prev: this._core.prev,
 			to: this._core.to
 		};
 
-		/**
-		 * All event handlers.
-		 * @protected
-		 * @type {Object}
-		 */
+		
 		this._handlers = {
 			'prepared.owl.carousel': $.proxy(function(e) {
 				if (e.namespace && this._core.settings.dotsData) {
@@ -2948,18 +2876,13 @@
 			}, this)
 		};
 
-		// set default options
+
 		this._core.options = $.extend({}, Navigation.Defaults, this._core.options);
 
-		// register event handlers
+	
 		this.$element.on(this._handlers);
 	};
 
-	/**
-	 * Default options.
-	 * @public
-	 * @todo Rename `slideBy` to `navBy`
-	 */
 	Navigation.Defaults = {
 		nav: false,
 		navText: [
@@ -3031,29 +2954,13 @@
 			this.to(index, settings.dotsSpeed);
 		}, this));
 
-		/*$el.on('focusin', function() {
-			$(document).off(".carousel");
-
-			$(document).on('keydown.carousel', function(e) {
-				if(e.keyCode == 37) {
-					$el.trigger('prev.owl')
-				}
-				if(e.keyCode == 39) {
-					$el.trigger('next.owl')
-				}
-			});
-		});*/
-
-		// override public methods of the carousel
+	
 		for (override in this._overrides) {
 			this._core[override] = $.proxy(this[override], this);
 		}
 	};
 
-	/**
-	 * Destroys the plugin.
-	 * @protected
-	 */
+	
 	Navigation.prototype.destroy = function() {
 		var handler, control, property, override, settings;
 		settings = this._core.settings;
@@ -3076,10 +2983,7 @@
 		}
 	};
 
-	/**
-	 * Updates the internal state.
-	 * @protected
-	 */
+	
 	Navigation.prototype.update = function() {
 		var i, j, k,
 			lower = this._core.clones().length / 2,
@@ -3112,11 +3016,7 @@
 		}
 	};
 
-	/**
-	 * Draws the user interface.
-	 * @todo The option `dotsData` wont work.
-	 * @protected
-	 */
+	
 	Navigation.prototype.draw = function() {
 		var difference,
 			settings = this._core.settings,
@@ -3149,11 +3049,7 @@
 		}
 	};
 
-	/**
-	 * Extends event data.
-	 * @protected
-	 * @param {Event} event - The event object which gets thrown.
-	 */
+	
 	Navigation.prototype.onTrigger = function(event) {
 		var settings = this._core.settings;
 
@@ -3165,11 +3061,7 @@
 		};
 	};
 
-	/**
-	 * Gets the current page position of the carousel.
-	 * @protected
-	 * @returns {Number}
-	 */
+	
 	Navigation.prototype.current = function() {
 		var current = this._core.relative(this._core.current());
 		return $.grep(this._pages, $.proxy(function(page, index) {
@@ -3177,11 +3069,7 @@
 		}, this)).pop();
 	};
 
-	/**
-	 * Gets the current succesor/predecessor position.
-	 * @protected
-	 * @returns {Number}
-	 */
+
 	Navigation.prototype.getPosition = function(successor) {
 		var position, length,
 			settings = this._core.settings;
@@ -3200,31 +3088,17 @@
 		return position;
 	};
 
-	/**
-	 * Slides to the next item or page.
-	 * @public
-	 * @param {Number} [speed=false] - The time in milliseconds for the transition.
-	 */
+	
 	Navigation.prototype.next = function(speed) {
 		$.proxy(this._overrides.to, this._core)(this.getPosition(true), speed);
 	};
 
-	/**
-	 * Slides to the previous item or page.
-	 * @public
-	 * @param {Number} [speed=false] - The time in milliseconds for the transition.
-	 */
+	
 	Navigation.prototype.prev = function(speed) {
 		$.proxy(this._overrides.to, this._core)(this.getPosition(false), speed);
 	};
 
-	/**
-	 * Slides to the specified item or page.
-	 * @public
-	 * @param {Number} position - The position of the item or page.
-	 * @param {Number} [speed] - The time in milliseconds for the transition.
-	 * @param {Boolean} [standard=false] - Whether to use the standard behaviour or not.
-	 */
+	
 	Navigation.prototype.to = function(position, speed, standard) {
 		var length;
 
@@ -3240,47 +3114,22 @@
 
 })(window.Zepto || window.jQuery, window, document);
 
-/**
- * Hash Plugin
- * @version 2.3.4
- * @author Artus Kolanowski
- * @author David Deutsch
- * @license The MIT License (MIT)
- */
+
 ;(function($, window, document, undefined) {
 	'use strict';
 
-	/**
-	 * Creates the hash plugin.
-	 * @class The Hash Plugin
-	 * @param {Owl} carousel - The Owl Carousel
-	 */
+	
 	var Hash = function(carousel) {
-		/**
-		 * Reference to the core.
-		 * @protected
-		 * @type {Owl}
-		 */
+		
 		this._core = carousel;
 
-		/**
-		 * Hash index for the items.
-		 * @protected
-		 * @type {Object}
-		 */
+		
 		this._hashes = {};
 
-		/**
-		 * The carousel element.
-		 * @type {jQuery}
-		 */
+		
 		this.$element = this._core.$element;
 
-		/**
-		 * All event handlers.
-		 * @protected
-		 * @type {Object}
-		 */
+		
 		this._handlers = {
 			'initialized.owl.carousel': $.proxy(function(e) {
 				if (e.namespace && this._core.settings.startPosition === 'URLHash') {
@@ -3314,13 +3163,13 @@
 			}, this)
 		};
 
-		// set default options
+	
 		this._core.options = $.extend({}, Hash.Defaults, this._core.options);
 
-		// register the event handlers
+	
 		this.$element.on(this._handlers);
 
-		// register event listener for hash navigation
+	
 		$(window).on('hashchange.owl.navigation', $.proxy(function(e) {
 			var hash = window.location.hash.substring(1),
 				items = this._core.$stage.children(),
@@ -3334,18 +3183,11 @@
 		}, this));
 	};
 
-	/**
-	 * Default options.
-	 * @public
-	 */
 	Hash.Defaults = {
 		URLhashListener: false
 	};
 
-	/**
-	 * Destroys the plugin.
-	 * @public
-	 */
+
 	Hash.prototype.destroy = function() {
 		var handler, property;
 
@@ -3363,15 +3205,6 @@
 
 })(window.Zepto || window.jQuery, window, document);
 
-/**
- * Support Plugin
- *
- * @version 2.3.4
- * @author Vivid Planet Software GmbH
- * @author Artus Kolanowski
- * @author David Deutsch
- * @license The MIT License (MIT)
- */
 ;(function($, window, document, undefined) {
 
 	var style = $('<support>').get(0).style,
@@ -3428,19 +3261,19 @@
 	}
 
 	if (tests.csstransitions()) {
-		/* jshint -W053 */
+		
 		$.support.transition = new String(prefixed('transition'))
 		$.support.transition.end = events.transition.end[ $.support.transition ];
 	}
 
 	if (tests.cssanimations()) {
-		/* jshint -W053 */
+	
 		$.support.animation = new String(prefixed('animation'))
 		$.support.animation.end = events.animation.end[ $.support.animation ];
 	}
 
 	if (tests.csstransforms()) {
-		/* jshint -W053 */
+		
 		$.support.transform = new String(prefixed('transform'));
 		$.support.transform3d = tests.csstransforms3d();
 	}

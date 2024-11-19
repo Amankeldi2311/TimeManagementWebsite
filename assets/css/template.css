@@ -1,39 +1,6 @@
-/*
 
-TemplateMo 574 Mexant
-
-https://templatemo.com/tm-574-mexant
-
-*/
-
-/* ---------------------------------------------
-Table of contents
-------------------------------------------------
-01. font & reset css
-02. reset
-03. global styles
-04. header
-05. banner
-06. features
-07. testimonials
-08. contact
-09. footer
-10. preloader
-11. search
-12. portfolio
-
---------------------------------------------- */
-/* 
----------------------------------------------
-font & reset css
---------------------------------------------- 
-*/
 @import url("https://fonts.googleapis.com/css?family=Open+Sans:100,200,300,400,500,600,700,800,900");
-/* 
----------------------------------------------
-reset
---------------------------------------------- 
-*/
+
 html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, div
 pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q,
 s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li,
@@ -114,11 +81,6 @@ img {
   overflow: hidden;
 }
 
-/* 
----------------------------------------------
-global styles
---------------------------------------------- 
-*/
 html,
 body {
   background: #fff;
@@ -218,11 +180,6 @@ section {
 }
 
 
-/* 
----------------------------------------------
-header
---------------------------------------------- 
-*/
 .background-header {
   background-color: #212741;
   height: 80px!important;
@@ -681,11 +638,7 @@ header
 }
 
 
-/* 
----------------------------------------------
-banner
---------------------------------------------- 
-*/
+
 
 .swiper-container {
   height: calc(100vh - 0px);
@@ -794,11 +747,7 @@ banner
   color: #fff !important;
 }
 
-/*
----------------------------------------------
-services
----------------------------------------------
-*/ 
+
 
 section.services {
   margin-top: 90px;
@@ -832,11 +781,6 @@ section.services {
 
 
 
-/*
----------------------------------------------
-cta
----------------------------------------------
-*/
 
 section.simple-cta {
   background-image: url(../images/cta-bg.jpg);
@@ -889,12 +833,6 @@ section.simple-cta .buttons .green-button {
 }
 
 
-
-/*
----------------------------------------------
-about us
----------------------------------------------
-*/
 
 section.about-us {
   margin-top: 90px;
@@ -1003,82 +941,6 @@ section.about-us .right-content p {
 }
 
 
-/*
----------------------------------------------
-calculator
----------------------------------------------
-*/
-
-section.calculator {
-  margin-top: 150px;
-  background-image: url(../images/calculator-bg.jpg);
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: cover;
-  width: 100%;
-  padding: 80px 0px;
-}
-
-section.calculator .left-image {
-  margin: -110px 45px -80px 0px;
-}
-
-section.calculator .section-heading {
-  text-align: left;
-}
-
-section.calculator .section-heading h4 {
-  color: #fff;
-}
-
-#calculate label {
-  color: #fff;
-  font-size: 14px;
-  margin-bottom: 5px;
-}
-
-#calculate input,
-#calculate select {
-  background-color: rgba(121,134,151, 0.7);
-  border: none;
-  border-radius: 5px;
-  width: 100%;
-  height: 42px;
-  color: #fff;
-  font-size: 14px;
-  margin-bottom: 30px;
-  outline: none;
-}
-
-#calculate select {
-  cursor: pointer;
-}
-
-#calculate button.orange-button {
-  font-size: 14px;
-  color: #fff;
-  background-color: #ff511a;
-  padding: 12px 30px;
-  display: inline-block;
-  border-radius: 5px;
-  font-weight: 500;
-  text-transform: capitalize;
-  letter-spacing: 0.5px;
-  border: none;
-  transition: all .3s;
-}
-
-#calculate button.orange-button:hover {
-  opacity: 0.9;
-}
-
-
-
-/* 
----------------------------------------------
-testimonials
---------------------------------------------- 
-*/
 
 section.testimonials {
   margin-top: 90px;
@@ -1161,12 +1023,6 @@ section.testimonials .section-heading {
 
 
 
-/* 
----------------------------------------------
-partners
---------------------------------------------- 
-*/
-
 section.partners {
   background-color: #212741;
   padding: 80px 0px;
@@ -1183,12 +1039,6 @@ section.partners .item:hover {
 }
 
 
-
-/* 
----------------------------------------------
-footer 
---------------------------------------------- 
-*/
 
 footer {
   background-color: #181d30;
@@ -1207,11 +1057,6 @@ footer p a {
 
 
 
-/* 
----------------------------------------------
-page heading
---------------------------------------------- 
-*/
 
 .page-heading {
   background-image: url(../images/heading-bg.jpg);
@@ -1237,12 +1082,6 @@ page heading
 }
 
 
-
-/* 
----------------------------------------------
-about us page
---------------------------------------------- 
-*/
 
 section.top-section .left-image img {
   border-radius: 10px;
@@ -1349,11 +1188,6 @@ section.what-we-do {
 
 
 
-/* 
----------------------------------------------
-services page
---------------------------------------------- 
-*/
 
 .main-services .service-item {
   margin-bottom: 60px;
@@ -1520,11 +1354,6 @@ section.service-details ul.nacc li.active {
 
 
 
-/* 
----------------------------------------------
-contact us page
---------------------------------------------- 
-*/
 
 section.map .info-item {
   text-align: center;
@@ -1618,12 +1447,6 @@ section.map .info-item a:hover {
   background-color: #43ba7f;
 }
 
-
-/* 
----------------------------------------------
-responsive
---------------------------------------------- 
-*/
 
 
 body {
